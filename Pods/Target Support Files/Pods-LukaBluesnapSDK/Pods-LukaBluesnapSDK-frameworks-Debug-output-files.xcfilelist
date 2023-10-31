@@ -1,0 +1,2 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CardinalMobile.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BluesnapSDK.framework

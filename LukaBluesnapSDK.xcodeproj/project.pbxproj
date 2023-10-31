@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		137BE32CB9BD4570DF59C4FC /* Pods_LukaBluesnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC470363E501175EDAD2BC6F /* Pods_LukaBluesnapSDK.framework */; };
 		824C2FF52AF18587003CA4AE /* LukaBluesnapSDKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C2FF42AF18587003CA4AE /* LukaBluesnapSDKApp.swift */; };
 		824C2FF72AF18587003CA4AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C2FF62AF18587003CA4AE /* ContentView.swift */; };
 		824C2FF92AF18588003CA4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FF82AF18588003CA4AE /* Assets.xcassets */; };
@@ -14,11 +15,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80D35395C0C8ED869ABC0E5F /* Pods-LukaBluesnapSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LukaBluesnapSDK.release.xcconfig"; path = "Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK.release.xcconfig"; sourceTree = "<group>"; };
 		824C2FF12AF18587003CA4AE /* LukaBluesnapSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LukaBluesnapSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824C2FF42AF18587003CA4AE /* LukaBluesnapSDKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukaBluesnapSDKApp.swift; sourceTree = "<group>"; };
 		824C2FF62AF18587003CA4AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		824C2FF82AF18588003CA4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A87B8C586410B5EB5DB740A /* Pods-LukaBluesnapSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LukaBluesnapSDK.debug.xcconfig"; path = "Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		CC470363E501175EDAD2BC6F /* Pods_LukaBluesnapSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LukaBluesnapSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +30,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				137BE32CB9BD4570DF59C4FC /* Pods_LukaBluesnapSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5146428E0ACDB90D001BD76A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A87B8C586410B5EB5DB740A /* Pods-LukaBluesnapSDK.debug.xcconfig */,
+				80D35395C0C8ED869ABC0E5F /* Pods-LukaBluesnapSDK.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		824C2FE82AF18587003CA4AE = {
 			isa = PBXGroup;
 			children = (
 				824C2FF32AF18587003CA4AE /* LukaBluesnapSDK */,
 				824C2FF22AF18587003CA4AE /* Products */,
+				5146428E0ACDB90D001BD76A /* Pods */,
+				B4721F70AAD656E423BE2D45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B4721F70AAD656E423BE2D45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC470363E501175EDAD2BC6F /* Pods_LukaBluesnapSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 824C2FFF2AF18588003CA4AE /* Build configuration list for PBXNativeTarget "LukaBluesnapSDK" */;
 			buildPhases = (
+				86B5C9E0BDEB3F6B9EA7C5D0 /* [CP] Check Pods Manifest.lock */,
 				824C2FED2AF18587003CA4AE /* Sources */,
 				824C2FEE2AF18587003CA4AE /* Frameworks */,
 				824C2FEF2AF18587003CA4AE /* Resources */,
+				93187F6B485F211AE8F12AF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86B5C9E0BDEB3F6B9EA7C5D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LukaBluesnapSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93187F6B485F211AE8F12AF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		824C2FED2AF18587003CA4AE /* Sources */ = {
@@ -261,6 +330,7 @@
 		};
 		824C30002AF18588003CA4AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A87B8C586410B5EB5DB740A /* Pods-LukaBluesnapSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +360,7 @@
 		};
 		824C30012AF18588003CA4AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D35395C0C8ED869ABC0E5F /* Pods-LukaBluesnapSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
