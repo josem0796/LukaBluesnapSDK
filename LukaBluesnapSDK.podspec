@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.author       = { 'Jose Moran' => 'jmoran@lukapay.io' }
   s.source       = { :git => 'https://github.com/josem0796/LukaBluesnapSDK.git', :tag => s.version.to_s }
 
-  s.platform     = :ios, '13.0'
-#  s.source_files = 'Sources/**/*.{h,m,swift}'
+  s.platform     = :ios, '15.0'
+  s.source_files = 'LukaBluesnap/**/*.{h,m,swift}'
 #  s.resources    = 'Resources/**/*.{xib,storyboard,images}'
   s.frameworks   = 'UIKit', 'Foundation'
   s.dependency 'BluesnapSDK'
