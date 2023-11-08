@@ -10,11 +10,9 @@
 #endif
 #endif
 
+#import "BluesnapSDK.h"
 #import "Kount-Bridging-Header.h"
 #import "KDataCollector.h"
-#import "KDataCollector.h"
-#import "KountAnalyticsViewController.h"
-#import "KountAnalyticsViewController.h"
 
 FOUNDATION_EXPORT double BluesnapSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char BluesnapSDKVersionString[];

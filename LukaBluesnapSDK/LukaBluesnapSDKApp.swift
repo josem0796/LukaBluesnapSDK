@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
-struct LukaBluesnapSDKApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
+//@main
+//struct LukaBluesnapSDKApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}

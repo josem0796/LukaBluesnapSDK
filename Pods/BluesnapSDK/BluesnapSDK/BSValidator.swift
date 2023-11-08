@@ -574,7 +574,7 @@ public class BSValidator: NSObject {
         let ccn = BSStringUtils.removeWhitespaces(str)
         
         // Display the card type for the card Regex
-        for index in 0...self.cardTypesRegex.count-1 {
+      for index in 0...self.cardTypesRegex.count-1 {
             if let _ = ccn.range(of:self.cardTypesRegex[index]!.regexp, options: .regularExpression) {
                 return self.cardTypesRegex[index]!.cardType
             }

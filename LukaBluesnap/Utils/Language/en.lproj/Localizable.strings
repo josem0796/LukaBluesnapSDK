@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  LukaBluesnapSDK
+
+  Created by Jose Moran on 5/11/23.
+  
+*/
+"card_number"="Card Number";
+"name"="Name";
+"expiry_date"="Expiry date";
+"cvv"="Security Code";
+"enter_card_details"="Enter your card details";
+"card_details"="Card Details";
+"cardholder_name"="Cardholder name";"cvv"="CVV";
+"add"="Add";
+"no_auth"="No authentication was provided";
+"card_already_added_error"="This card is already added.";
+"accept"="Accept.";
+"cancel"="Cancel.";
+"bs-token"="Authentication with Bluesnap failed. Please try again.";
+"auth-token"="Authentication with Luka failed. Please try again.";
+"invalid-card"="There was a problem while processing this transaction. Verify the card details and try again.";
+"3dsecure-unavailable-error"="3D Secure authentication is unavailable for this card.";
+"3dsecure-failed-error"="3D Secure authentication failed.";
+"3dsecure-internal-error"="3D Secure internal error.";
+

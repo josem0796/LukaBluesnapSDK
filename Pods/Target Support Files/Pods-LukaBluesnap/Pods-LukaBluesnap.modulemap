@@ -1,0 +1,6 @@
+framework module Pods_LukaBluesnap {
+  umbrella header "Pods-LukaBluesnap-umbrella.h"
+
+  export *
+  module * { export * }
+}
