@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LukaBluesnapSDK'
-  s.version      = '1.0.2'
+  s.version      = '1.0.3'
   s.summary      = 'A module for integrating the LukaBluesnapSDK into your iOS project.'
   s.description  = 'This module provides functionality for working with the LukaBluesnapSDK in your iOS app.'
   s.homepage     = 'https://github.com/josem0796/LukaBluesnapSDK'
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '15.0'
   s.source_files = 'LukaBluesnap/**/*.{h,m,swift}'
-#  s.resources    = 'Resources/**/*.{xib,storyboard,images}'
+  s.resources    = 'LukaBluesnap/Utils/Fonts/*.{ttf}'
   s.frameworks   = 'UIKit', 'Foundation'
   s.dependency 'BluesnapSDK'
   s.dependency 'Alamofire'

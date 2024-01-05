@@ -298,6 +298,21 @@
                   endingLineNumber = "56"
                   offsetFromSymbolStart = "16">
                </Location>
+               <Location
+                  uuid = "F2CA919F-ED4D-4A81-B389-0A441708DF9B - ca7811df819c094d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (LukaBluesnap.TransactionResult) -&gt; () in LukaBluesnapSDK.MainViewModel.makePayment(card: LukaBluesnap.LukaCard) -&gt; ()"
+                  moduleName = "LukaBluesnapSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnapSDK/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "88">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -362,6 +377,22 @@
             startingLineNumber = "58"
             endingLineNumber = "58"
             landmarkName = "makePayment(card:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D70D87AF-1F64-445B-80B5-23C838345C68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/Utils/Fonts/FontLoader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "loadFont()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
