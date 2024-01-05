@@ -55,6 +55,10 @@ struct ExpiryDateInput: View {
 
   func limitText(_ upper: Int) {
     if value.count <= upper {
+      if #available(iOS 17.0, *) {
+        value = getTextFormatted(text: value)
+        return
+      }
       return
     }
 
