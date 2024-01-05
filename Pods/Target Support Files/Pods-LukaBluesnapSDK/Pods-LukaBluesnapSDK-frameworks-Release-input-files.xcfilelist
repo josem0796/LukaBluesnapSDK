@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK-frameworks.sh
-${PODS_ROOT}/BluesnapSDK/BluesnapSDK/CardinalMobile.framework
 ${BUILT_PRODUCTS_DIR}/BluesnapSDK/BluesnapSDK.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BluesnapSDK/CardinalMobile.framework/CardinalMobile

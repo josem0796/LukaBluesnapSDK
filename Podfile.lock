@@ -1,12 +1,10 @@
 PODS:
   - Alamofire (5.8.1)
-  - BluesnapSDK (1.4.2):
-    - BluesnapSDK/DataCollector (= 1.4.2)
-  - BluesnapSDK/DataCollector (1.4.2)
+  - BluesnapSDK (2.0.2)
 
 DEPENDENCIES:
   - Alamofire
-  - BluesnapSDK (from `https://github.com/bluesnap/bluesnap-ios-int`, tag `1.4.3`)
+  - BluesnapSDK (from `https://github.com/bluesnap/bluesnap-ios`, tag `v2.0.2`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -14,18 +12,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   BluesnapSDK:
-    :git: https://github.com/bluesnap/bluesnap-ios-int
-    :tag: 1.4.3
+    :git: https://github.com/bluesnap/bluesnap-ios
+    :tag: v2.0.2
 
 CHECKOUT OPTIONS:
   BluesnapSDK:
-    :git: https://github.com/bluesnap/bluesnap-ios-int
-    :tag: 1.4.3
+    :git: https://github.com/bluesnap/bluesnap-ios
+    :tag: v2.0.2
 
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
-  BluesnapSDK: 83971fcfe90d75c174a45846312da1093d8bb661
+  BluesnapSDK: b89b918bd7198367de7a0d55c1939ca9d0066ab1
 
-PODFILE CHECKSUM: c93bd886cadb8c892652ce098479a0f7fff9671c
+PODFILE CHECKSUM: 8aeebf266ba4db80ab060ffcb7536b3953d56261
 
 COCOAPODS: 1.14.2

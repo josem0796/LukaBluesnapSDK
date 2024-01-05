@@ -48,11 +48,15 @@ Some of the capabilities include:
 * Reguler payments, shopper configuration and subscription charges.
 
 # Installation
-> The SDK is written in Swift 5, using Xcode 11.3.1.
+> The SDK is written in Swift 5, using Xcode 14.3.1.
 
 ## Requirements
 * Xcode 10+
-* [BlueSnap API credentials](https://support.bluesnap.com/docs/api-credentials) 
+* [BlueSnap API credentials](https://support.bluesnap.com/docs/api-credentials)
+
+BluesnapSDK expects a .plist file that contains the BlueSnap API credentials in your product bundles. Please note that it's fine to have just one physical instance of the file and have the rest of the instances be Xcode references.
+
+The .plist file must be called `credentials.plist` and it must contain 2 strings in the root of the plist, `BsAPIUser` and `BsAPIPassword` (the order in which they appear in the plist does not matter).
 
 ## CocoaPods (Optional, CocoaPods 1.1.0+)
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
@@ -82,6 +86,10 @@ $ pod install
 ```
 > Use the .xcworkspace file to open your project in Xcode.
 
+## SPM (Optional)
+
+To integrate BluesnapSDK into your Xcode project using SPM, open your project in Xcode and add the package by opening the SPM dialog via File -> Add Package Dependencies. After the SPM dialog window opens up, enter the repo's URL in the search bar and then click Add Package. **Important:** When Xcode prompts you to select the packages you want to import, you **MUST** select the `KountWrapper` package as well, regardless of whether or not you are using Kount in your project. Due to SPM limitations, `KountWrapper` is a direct dependency of `BluesnapSDK` in this instance, and both must come together.
+
 ## Disable landscape mode
 Landscape mode is not supported in our UI, so in order to make sure the screen does not rotate with the device, you need to add this code to your application's AppDelegate.swift file:
 
@@ -89,9 +97,6 @@ Landscape mode is not supported in our UI, so in order to make sure the screen d
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
     }
-
-## Objective C Applications
-This SDK is written in Swift. If your application is written in Objective-C, you might need to embed a Swift runtime library. Please follow [Apple's documentation](https://developer.apple.com/library/content/qa/qa1881/_index.html) to set up your project accordingly.
 
 ## Apple Pay (optional)
 In the Standard Checkout Flow, Apple Pay is available for you to offer in your app. You will need to create a new Apple Pay Certificate, Apple Merchant ID, and configure Apple Pay in Xcode. Detailed instructions are available in our [Apple Pay Guide](https://developers.bluesnap.com/docs/apple-pay#section-implementing-apple-pay-in-your-website-or-ios-app). 
@@ -445,56 +450,56 @@ This class allows you to initialize your checkout settings, such as price detail
 
 For more information on the properties of `BSSdkRequest`, see [Defining sdkRequest](#defining-sdkrequest). 
  
-	@objc public class BSSdkRequest : NSObject {
-		public var withEmail: Bool = true
-		public var withShipping: Bool = false
-		public var fullBilling : Bool = false
+    @objc public class BSSdkRequest : NSObject {
+        public var withEmail: Bool = true
+        public var withShipping: Bool = false
+        public var fullBilling : Bool = false
 
-		public var priceDetails: BSPriceDetails! = BSPriceDetails(amount: 0, taxAmount: 0, currency: nil)
-		
-		public var billingDetails : BSBillingAddressDetails?
-		public var shippingDetails : BSShippingAddressDetails?
-    	public var purchaseFunc: (BSBaseSdkResult!) -> Void
-		public var updateTaxFunc: ((_ shippingCountry: String, _ shippingState: String?, _ priceDetails: BSPriceDetails) -> Void)?
-		
-		public init(
-        		withEmail: Bool,
-        		withShipping: Bool,
-        		fullBilling: Bool,
-        		priceDetails: BSPriceDetails!,
-        		billingDetails: BSBillingAddressDetails?,
-        		shippingDetails: BSShippingAddressDetails?,
-        		purchaseFunc: @escaping (BSBaseSdkResult!) -> Void,
-        		updateTaxFunc: ((_ shippingCountry: String, _ shippingState: String?, _ priceDetails: BSPriceDetails) -> Void)?) {
-				...
-		}
-	}
+        public var priceDetails: BSPriceDetails! = BSPriceDetails(amount: 0, taxAmount: 0, currency: nil)
+        
+        public var billingDetails : BSBillingAddressDetails?
+        public var shippingDetails : BSShippingAddressDetails?
+        public var purchaseFunc: (BSBaseSdkResult!) -> Void
+        public var updateTaxFunc: ((_ shippingCountry: String, _ shippingState: String?, _ priceDetails: BSPriceDetails) -> Void)?
+        
+        public init(
+                withEmail: Bool,
+                withShipping: Bool,
+                fullBilling: Bool,
+                priceDetails: BSPriceDetails!,
+                billingDetails: BSBillingAddressDetails?,
+                shippingDetails: BSShippingAddressDetails?,
+                purchaseFunc: @escaping (BSBaseSdkResult!) -> Void,
+                updateTaxFunc: ((_ shippingCountry: String, _ shippingState: String?, _ priceDetails: BSPriceDetails) -> Void)?) {
+                ...
+        }
+    }
 
 ### BSPriceDetails (in BSPurchaseDataModel.swift)
 This class contains the price details that are both input and output for the purchase, such as amount, tax amount, and currency. 
 
-	@objc public class BSPriceDetails : NSObject, NSCopying {
-		
-		public var amount : Double! = 0.0
-		public var taxAmount : Double! = 0.0
-		public var currency : String! = "USD"
-		
-		public init(amount : Double!, taxAmount : Double!, currency : String?) {
-			super.init()
-			self.amount = amount
-			self.taxAmount = taxAmount
-			self.currency = currency ?? "USD"
-		}
-		
-		public func copy(with zone: NSZone? = nil) -> Any {
-			let copy = BSPriceDetails(amount: amount, taxAmount: taxAmount, currency: currency)
-			return copy
-		}
-		
-		public func changeCurrencyAndConvertAmounts(newCurrency: BSCurrency!) {
-			...
-		}
-	}
+    @objc public class BSPriceDetails : NSObject, NSCopying {
+        
+        public var amount : Double! = 0.0
+        public var taxAmount : Double! = 0.0
+        public var currency : String! = "USD"
+        
+        public init(amount : Double!, taxAmount : Double!, currency : String?) {
+            super.init()
+            self.amount = amount
+            self.taxAmount = taxAmount
+            self.currency = currency ?? "USD"
+        }
+        
+        public func copy(with zone: NSZone? = nil) -> Any {
+            let copy = BSPriceDetails(amount: amount, taxAmount: taxAmount, currency: currency)
+            return copy
+        }
+        
+        public func changeCurrencyAndConvertAmounts(newCurrency: BSCurrency!) {
+            ...
+        }
+    }
 
 ### BSBaseAddressDetails, BSBillingAddressDetails, BSShippingAddressDetails (in BSAddress.swift)
 
@@ -510,30 +515,30 @@ Optional/Mandatory:
 ```
 public class BSBaseAddressDetails {
 
-	public init() {}
+    public init() {}
 
-	public var name : String! = ""
-	public var address : String?
-	public var city : String?
-	public var zip : String?
-	public var country : String?
-	public var state : String?
+    public var name : String! = ""
+    public var address : String?
+    public var city : String?
+    public var zip : String?
+    public var country : String?
+    public var state : String?
 
-	public func getSplitName() -> (firstName: String, lastName: String)? {
-		return BSStringUtils.splitName(name)
-	}
+    public func getSplitName() -> (firstName: String, lastName: String)? {
+        return BSStringUtils.splitName(name)
+    }
 }
 
 public class BSBillingAddressDetails : BSBaseAddressDetails {
 
-	public override init() { super.init() }
-	public var email : String?
+    public override init() { super.init() }
+    public var email : String?
 }
 
 public class BSShippingAddressDetails : BSBaseAddressDetails {
 
-	public override init() { super.init() }
-	public var phone : String?
+    public override init() { super.init() }
+    public var phone : String?
 }
 ```
 
@@ -541,9 +546,9 @@ public class BSShippingAddressDetails : BSBaseAddressDetails {
 This enum differentiates between the payment method the user chose. It will contain cases for credit card, Apple Pay, and PayPal. 
 ```
 public enum BSPaymentType {
-	case CreditCard = "CC"
-	case ApplePay = "APPLE_PAY"
-	case PayPal = "PAYPAL"
+    case CreditCard = "CC"
+    case ApplePay = "APPLE_PAY"
+    case PayPal = "PAYPAL"
 }
 ```
 ### BSBaseSdkResult (in BSPurchaseDataModel.swift)
@@ -557,11 +562,11 @@ The central data structure is this class (and its derived classes), which holds 
         internal init(sdkRequest: BSSdkRequest) {
             ...
         }
-	
-	// Returns the fraud session ID used in KountInit()
-    	public func getFraudSessionId() -> String? {
-        	return fraudSessionId;
-    	}
+    
+    // Returns the fraud session ID used in KountInit()
+        public func getFraudSessionId() -> String? {
+            return fraudSessionId;
+        }
         
         /*
         Set amounts will reset the currency and amounts, including the original amounts.
@@ -604,24 +609,24 @@ This class inherits from `BSBaseSdkResult`, and it holds the data collected in t
 ### BSExistingCcSdkResult (in BSCcPayment.swift)
 This class inherits from `BSCcSdkResult` and it holds the data collected during checkout when a returning user selects an existing credit card. The data it holds is the same as the parent class.
 
-	public class BSExistingCcPaymentRequest : BSCcPaymentRequest, NSCopying {
-    		
-		...
-	}
+    public class BSExistingCcPaymentRequest : BSCcPaymentRequest, NSCopying {
+            
+        ...
+    }
     
 ### BSCreditCard (in BSCcPayment.swift)
 This class contains the user's non-sensitive CC details for the purchase, including CC type, last four digits of CC number, and issuing country. 
 
-	@objc public class BSCreditCard : NSObject, NSCopying {
-		
-		// these fields are output - result of submitting the CC details to BlueSnap
-		public var ccType : String?
-		public var last4Digits : String?
-		public var ccIssuingCountry : String?
-    		public var expirationMonth: String?
-    		public var expirationYear: String?
-		...
-	}
+    @objc public class BSCreditCard : NSObject, NSCopying {
+        
+        // these fields are output - result of submitting the CC details to BlueSnap
+        public var ccType : String?
+        public var last4Digits : String?
+        public var ccIssuingCountry : String?
+            public var expirationMonth: String?
+            public var expirationYear: String?
+        ...
+    }
 
 ### BSApplePaySdkResult (in BSApplePayPayment.swift)
 This class inherits from `BSBaseSdkResult`, and it holds the data collected in the ApplePay flow (which is currently nothing).
@@ -653,14 +658,14 @@ This is the first function you need to call to initialize your token, fraud prev
 
 Signature:
 
-	open class func initBluesnap(
-        	bsToken : BSToken!,
-        	generateTokenFunc: @escaping (_ completion: @escaping (BSToken?, BSErrors?) -> Void) -> Void,
-        	initKount: Bool,
-        	fraudSessionId: String?,
-        	applePayMerchantIdentifier: String?,
-		merchantStoreCurrency : String?,
-        	completion: @escaping (BSErrors?)->Void) {
+    open class func initBluesnap(
+            bsToken : BSToken!,
+            generateTokenFunc: @escaping (_ completion: @escaping (BSToken?, BSErrors?) -> Void) -> Void,
+            initKount: Bool,
+            fraudSessionId: String?,
+            applePayMerchantIdentifier: String?,
+        merchantStoreCurrency : String?,
+            completion: @escaping (BSErrors?)->Void) {
 
 
 | Parameter | Description |
@@ -811,36 +816,36 @@ This class provides validation functions like isValidEmail, getCcLengthByCardTyp
 These currency structures and methods assist you in performing currency conversions during checkout. Use the function `changeCurrencyAndConvertAmounts`of `BSPriceDetails`.
 
 #### Currency Data Structures
-We have 2 data structures (see BSCurrencyModel.swift): 	`BSCurrency` holds a single currency and  `BSCurrencies` holds all the currencies.
+We have 2 data structures (see BSCurrencyModel.swift):     `BSCurrency` holds a single currency and  `BSCurrencies` holds all the currencies.
 
 ```
 public class BSCurrency {
-	internal var name : String!
-	internal var code : String!
-	internal var rate: Double!
-	...
-	public func getName() -> String! {
-		return self.name
-	}
-	public func getCode() -> String! {
-		return self.code
-	}
-	public func getRate() -> Double! {
-		return self.rate
-	}
+    internal var name : String!
+    internal var code : String!
+    internal var rate: Double!
+    ...
+    public func getName() -> String! {
+        return self.name
+    }
+    public func getCode() -> String! {
+        return self.code
+    }
+    public func getRate() -> Double! {
+        return self.rate
+    }
 }
 
 public class BSCurrencies {
-	...
-	public func getCurrencyByCode(code : String!) -> BSCurrency? {
-		...
-	}
-	public func getCurrencyIndex(code : String) -> Int? {
-		...
-	}
-	public func getCurrencyRateByCurrencyCode(code : String!) -> Double? {
-		...
-	}
+    ...
+    public func getCurrencyByCode(code : String!) -> BSCurrency? {
+        ...
+    }
+    public func getCurrencyIndex(code : String) -> Int? {
+        ...
+    }
+    public func getCurrencyRateByCurrencyCode(code : String!) -> Double? {
+        ...
+    }
 }
 ```
 #### Currency Functionality (in BlueSnapSDK class):

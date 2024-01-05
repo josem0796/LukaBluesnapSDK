@@ -150,7 +150,9 @@ class BsCard: ObservableObject {
   }
 
   var last4: String? {
-    return BSStringUtils.last4(cardNumber)
+    return String(cardNumber
+            .replaceWithRegex(pattern: " ", character: "")
+            .suffix(4))
   }
 
   init(cardNumber: String = "", cardHolderName: String = "", cardCvv: String = "", expiryDate: String = "") {

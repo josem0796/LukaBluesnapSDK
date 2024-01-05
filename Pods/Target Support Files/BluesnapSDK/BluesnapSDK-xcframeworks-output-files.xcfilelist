@@ -1,0 +1,2 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BluesnapSDK/CardinalMobile.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BluesnapSDK/KountDataCollector.framework

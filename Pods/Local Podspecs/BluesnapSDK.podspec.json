@@ -1,8 +1,8 @@
 {
   "name": "BluesnapSDK",
-  "version": "1.4.2",
+  "version": "2.0.2",
   "summary": "An iOS SDK for Bluesnap",
-  "description": "Integrate payment methods into your iOS native apps quickly and easily.\nBluesnap iOS SDK supports credit card and apple pay, currency conversions and more.",
+  "description": "Integrate payment methods into your iOS native apps quickly and easily.\nBluesnap iOS SDK supports credit card and Apple Pay, currency conversions and more.",
   "homepage": "http://www.bluesnap.com",
   "license": {
     "type": "MIT",
@@ -17,54 +17,38 @@
   "swift_versions": "5.0",
   "source": {
     "git": "https://github.com/bluesnap/bluesnap-ios.git",
-    "tag": "1.4.2"
+    "tag": "${spec.version}"
   },
-  "source_files": "BluesnapSDK/**/*.{h,m,swift,a}",
   "pod_target_xcconfig": {
-    "SWIFT_VERSION": "5.0",
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64",
-    "ONLY_ACTIVE_ARCH": "NO"
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
   },
-  "user_target_xcconfig": {
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
-  },
-  "resource_bundles": {
-    "BluesnapUI": [
-      "BluesnapSDK/**/*.xib",
-      "BluesnapSDK/**/*.storyboard",
-      "BluesnapSDK/**/Media.xcassets",
-      "BluesnapSDK/**/*.strings"
+  "source_files": [
+    "Sources/**/*.{h,m,swift}",
+    "KountWrapper/**/*.{h,m,c,swift}",
+    "Frameworks/XCFrameworks/KountDataCollector.xcframework/ios-arm64/Headers/KDataCollector.h",
+    "Frameworks/XCFrameworks/KountDataCollector.xcframework/ios-arm64/Headers/KountAnalyticsViewController.h"
+  ],
+  "public_header_files": [
+    "Frameworks/XCFrameworks/KountDataCollector.xcframework/ios-arm64/Headers/KDataCollector.h",
+    "Frameworks/XCFrameworks/KountDataCollector.xcframework/ios-arm64/Headers/KountAnalyticsViewController.h"
+  ],
+  "ios": {
+    "vendored_frameworks": [
+      "Frameworks/XCFrameworks/CardinalMobile.xcframework",
+      "Frameworks/XCFrameworks/KountDataCollector.xcframework"
     ]
   },
   "exclude_files": [
-    "BluesnapSDK/CardinalMobile.framework/Headers/**",
-    "BluesnapSDK/BluesnapSDKTests/**/*.*",
-    "BluesnapSDK/BluesnapSDKIntegrationTests/**/*.*",
-    "BluesnapSDK/**/libKountDataCollector.a",
-    "BluesnapSDK/**/KDataCollector.{h,m}"
+    "Tests/**/*.*",
+    "Frameworks/XCFrameworks/CardinalMobile.xcframework/**/Headers/**"
   ],
-  "ios": {
-    "vendored_frameworks": "BluesnapSDK/CardinalMobile.framework"
+  "resource_bundles": {
+    "BluesnapUI": [
+      "Sources/**/*.xib",
+      "Sources/**/*.storyboard",
+      "Sources/**/Media.xcassets",
+      "Sources/**/*.strings"
+    ]
   },
-  "resources": "BluesnapSDK/**/Media.xcassets",
-  "weak_frameworks": "Contacts",
-  "frameworks": [
-    "Foundation",
-    "Security",
-    "WebKit",
-    "PassKit",
-    "AddressBook",
-    "UIKit",
-    "Contacts"
-  ],
-  "requires_arc": true,
-  "subspecs": [
-    {
-      "name": "DataCollector",
-      "source_files": "BluesnapSDK/**/KDataCollector.{h,m}",
-      "public_header_files": "BluesnapSDK/**/KDataCollector*.h",
-      "vendored_libraries": "BluesnapSDK/**/libKountDataCollector.a"
-    }
-  ],
   "swift_version": "5.0"
 }
