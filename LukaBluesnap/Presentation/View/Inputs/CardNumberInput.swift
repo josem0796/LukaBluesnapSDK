@@ -24,18 +24,10 @@ struct CardNumberInput: View {
   }
 
   var body: some View {
-    let valueInnerBinding = Binding<String>(
-      get: {
-        return self.value
-      },
-      set: {
-        self.value = getTextFormatted(text: $0)
-      }
-    )
 
     TextField(
       "**** **** **** ****",
-      text: valueInnerBinding
+      text: _value
     )
     .onReceive(Just(value)) { _ in limitText(19) }
 
@@ -45,7 +37,8 @@ struct CardNumberInput: View {
 
   func limitText(_ upper: Int) {
     if value.count <= upper {
-      return
+        value = getTextFormatted(text: value)
+        return
     }
 
     value = getTextFormatted(text: String(value.prefix(upper)))
@@ -69,5 +62,11 @@ struct CardNumberInput: View {
       }
 
     return newText
+  }
+}
+
+struct CardNumberInput_Previews: PreviewProvider {
+  static var previews: some View {
+    CardNumberInput(value: .constant(""))
   }
 }

@@ -22,18 +22,10 @@ struct ExpiryDateInput: View {
   }
 
   var body: some View {
-    let valueInnerBinding = Binding<String>(
-      get: {
-        return self.value
-      },
-      set: {
-        self.value = getTextFormatted(text: $0)
-      }
-    )
 
     TextField(
       "MM/YY",
-      text: valueInnerBinding
+      text: _value
     )
     .onReceive(Just(value)) { _ in limitText(5) }
 
@@ -42,7 +34,8 @@ struct ExpiryDateInput: View {
 
   func limitText(_ upper: Int) {
     if value.count <= upper {
-      return
+        value = getTextFormatted(text: value)
+        return
     }
 
     value = getTextFormatted(text: String(value.prefix(upper)))
@@ -67,5 +60,11 @@ struct ExpiryDateInput: View {
       }
 
     return newText
+  }
+}
+
+struct ExpiryDateInput_Previews: PreviewProvider {
+  static var previews: some View {
+    ExpiryDateInput(value: .constant(""))
   }
 }

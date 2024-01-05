@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LukaBluesnapSDK'
-  s.version      = '1.0.6'
+  s.version      = '1.0.7'
   s.summary      = 'A module for integrating the LukaBluesnapSDK into your iOS project.'
   s.description  = 'This module provides functionality for working with the LukaBluesnapSDK in your iOS app.'
   s.homepage     = 'https://github.com/josem0796/LukaBluesnapSDK'

@@ -37,3 +37,9 @@ struct CVVInput: View {
   }
 
 }
+
+struct CVVInput_Previews: PreviewProvider {
+  static var previews: some View {
+    CVVInput(value: .constant(""))
+  }
+}
