@@ -30,7 +30,7 @@ struct LukaBluesnapView: View {
           Spacer()
 
           TextProvider.text(Strings.card_details.localized())
-            .font(.system(size: 20))
+            .customFont(.semiBold, size: 20)
 
           Spacer()
         }
@@ -59,7 +59,7 @@ struct LukaBluesnapView: View {
             default:
               TextProvider.text(Strings.add.localized())
                     .foregroundColor(.white)
-                    .font(.system(size: 16))
+                    .customFont(.bold, size: 16)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
       }.foregroundColor(.white)
@@ -86,11 +86,11 @@ struct LukaBluesnapView: View {
   var cardDetailsView: some View {
     VStack(alignment: .leading) {
       TextProvider.text(Strings.enter_card_details.localized())
-        .font(.system(size: 16))
+        .customFont(.regular, size: 16)
 
       VStack(alignment: .leading) {
         TextProvider.text(Strings.card_number.localized())
-          .font(.system(size: 12))
+          .customFont(.regular, size: 12)
           .padding(.top, 24)
         CardNumberInput(value: $viewModel.bsCard.cardNumber)
           .inputStyle()
@@ -98,7 +98,7 @@ struct LukaBluesnapView: View {
 
       VStack(alignment: .leading) {
         TextProvider.text(Strings.name.localized())
-          .font(.system(size: 12))
+          .customFont(.regular, size: 12)
         TextField("", text: $viewModel.bsCard.cardHolderName, prompt: TextProvider.text(Strings.cardholder_name.localized()))
           .inputStyle()
       }
@@ -106,14 +106,14 @@ struct LukaBluesnapView: View {
       HStack {
         VStack(alignment: .leading) {
           TextProvider.text(Strings.expiry_date.localized())
-            .font(.system(size: 12))
+            .customFont(.regular, size: 12)
           ExpiryDateInput(value: $viewModel.bsCard.expiryDate)
             .inputStyle()
         }
 
         VStack(alignment: .leading) {
           TextProvider.text(Strings.cvv.localized())
-            .font(.system(size: 12))
+            .customFont(.regular, size: 12)
           CVVInput(value: $viewModel.bsCard.cardCvv)
             .inputStyle()
         }
