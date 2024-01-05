@@ -22,20 +22,40 @@ struct ExpiryDateInput: View {
   }
 
   var body: some View {
+    if #available(iOS 17.0, *) {
+      TextField(
+        "MM/YY",
+        text: _value
+      )
+      .onReceive(Just(value)) { _ in limitText(5) }
 
-    TextField(
-      "MM/YY",
-      text: _value
-    )
-    .onReceive(Just(value)) { _ in limitText(5) }
+      .keyboardType(.numberPad)
+    } else {
+      let valueInnerBinding = Binding<String>(
+        get: {
+          return self.value
+        },
+        set: {
+          self.value = getTextFormatted(text: $0)
+        }
+      )
 
-    .keyboardType(.numberPad)
+      TextField(
+        "MM/YY",
+        text: valueInnerBinding
+      )
+      .onReceive(Just(value)) { _ in limitText(5) }
+
+      .keyboardType(.numberPad)
+    }
+    
+    
+    
   }
 
   func limitText(_ upper: Int) {
     if value.count <= upper {
-        value = getTextFormatted(text: value)
-        return
+      return
     }
 
     value = getTextFormatted(text: String(value.prefix(upper)))
@@ -60,11 +80,5 @@ struct ExpiryDateInput: View {
       }
 
     return newText
-  }
-}
-
-struct ExpiryDateInput_Previews: PreviewProvider {
-  static var previews: some View {
-    ExpiryDateInput(value: .constant(""))
   }
 }

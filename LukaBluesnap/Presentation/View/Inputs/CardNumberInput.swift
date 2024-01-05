@@ -24,21 +24,46 @@ struct CardNumberInput: View {
   }
 
   var body: some View {
+    
+    if #available(iOS 17.0, *) {
+      TextField(
+        "**** **** **** ****",
+        text: _value
+      )
+      .onReceive(Just(value)) { _ in limitText(19) }
 
-    TextField(
-      "**** **** **** ****",
-      text: _value
-    )
-    .onReceive(Just(value)) { _ in limitText(19) }
+
+      .keyboardType(.numberPad)
+      
+    }else {
+      let valueInnerBinding = Binding<String>(
+        get: {
+          return self.value
+        },
+        set: {
+          self.value = getTextFormatted(text: $0)
+        }
+      )
+      
+      TextField(
+        "**** **** **** ****",
+        text: valueInnerBinding
+      )
+      .onReceive(Just(value)) { _ in limitText(19) }
 
 
-    .keyboardType(.numberPad)
+      .keyboardType(.numberPad)
+    }
+
   }
 
   func limitText(_ upper: Int) {
     if value.count <= upper {
+      if #available(iOS 17.0, *) {
         value = getTextFormatted(text: value)
         return
+      }
+      return
     }
 
     value = getTextFormatted(text: String(value.prefix(upper)))
