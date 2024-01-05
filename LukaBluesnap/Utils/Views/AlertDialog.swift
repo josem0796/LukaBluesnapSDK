@@ -19,11 +19,11 @@ struct AlertDialog<Content: View>: View {
     title: String ,
     acceptBtnLabel: @escaping () -> Content = {
       TextProvider.text(Strings.accept.localized())
-        .customFont(.semiBold, size: 16)
+        .font(.system(size: 16))
     },
     cancelBtnLabel: @escaping () -> Content = {
       TextProvider.text(Strings.cancel.localized())
-        .customFont(.semiBold, size: 16)
+        .font(.system(size: 16))
     },
     onAccept: @escaping () -> Void = {},
     onCancel: (() -> Void)? = nil
@@ -39,7 +39,7 @@ struct AlertDialog<Content: View>: View {
     title: String,
     acceptBtnLabel: @escaping () -> Content = {
       TextProvider.text(Strings.accept.localized())
-        .customFont(.semiBold, size: 16)
+        .font(.system(size: 16))
     },
     onAccept: @escaping () -> Void = {}
   ) {
@@ -65,7 +65,7 @@ struct AlertDialog<Content: View>: View {
           VStack {
             Text(title)
               .multilineTextAlignment(.center)
-              .customFont(.semiBold, size: 16)
+              .font(.system(size: 16))
 
               .padding(.vertical, 8)
             HStack {

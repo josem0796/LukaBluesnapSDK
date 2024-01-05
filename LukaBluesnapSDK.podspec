@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '15.0'
   s.source_files = 'LukaBluesnap/**/*.{h,m,swift}'
-  s.resources    = 'LukaBluesnap/Utils/Fonts/*.{ttf}'
+  s.resources    = 'LukaBluesnap/**/*.{ttf,strings}'
   s.frameworks   = 'UIKit', 'Foundation'
   s.dependency 'BluesnapSDK'
   s.dependency 'Alamofire'
