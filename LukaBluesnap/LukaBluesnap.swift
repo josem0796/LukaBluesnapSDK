@@ -49,8 +49,12 @@ public class LukaBluesnapSdk {
     return GetCardsOperation(customerId: clientId)
   }
 
-  public static func addNewCard(email: String) -> AddCardOperation {
-    return AddCardOperation(email: email)
+  public static func addNewCard(navigationController: UINavigationController, email: String) -> AddCardOperation {
+    return AddCardOperation(controller: navigationController, email: email)
+  }
+  
+  public static func addNewCard( email: String) -> AddCardOperation {
+    return AddCardOperation(controller: nil, email: email)
   }
 
 }
@@ -58,9 +62,11 @@ public class LukaBluesnapSdk {
 public class AddCardOperation: Operation{
   public typealias G = AddCardResult
   internal let email: String
+  internal let navController: UINavigationController?
 
-  init(email: String) {
+  init(controller: UINavigationController?, email: String) {
     self.email = email
+    self.navController = controller
   }
 
   internal var successCall : ((AddCardResult) -> Void)? = nil
@@ -85,6 +91,13 @@ public class AddCardOperation: Operation{
   public func start() {
     LukaBluesnapSdk.instance.operation = self
     let hostingViewController = UIHostingController(rootView: LukaBluesnapView())
+    
+    if navController != nil {
+      navController?.pushViewController(hostingViewController, animated: true)
+      return
+    }
+    
+    
     if let mainViewController = UIApplication.getMainViewController() {
         // Now you can use the mainViewController as the main view controller.
       mainViewController.pushViewController(hostingViewController, animated: true)
@@ -92,6 +105,12 @@ public class AddCardOperation: Operation{
   }
 
   public func dismiss() {
+    
+    if navController != nil {
+      navController?.popViewController(animated: true)
+      return
+    }
+    
     if let mainViewController = UIApplication.getMainViewController() {
         // Now you can use the mainViewController as the main view controller.
       mainViewController.popViewController(animated: true)
