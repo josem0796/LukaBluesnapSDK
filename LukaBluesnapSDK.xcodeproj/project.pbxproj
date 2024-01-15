@@ -67,6 +67,7 @@
 		824C2FFC2AF18588003CA4AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */; };
 		827718A32AF4299B00660E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827718A22AF4299B00660E08 /* Main.storyboard */; };
 		827718A52AF458CF00660E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827718A42AF458CF00660E08 /* AppDelegate.swift */; };
+		82DD72032B55957100767BF8 /* loading_white.json in Resources */ = {isa = PBXBuildFile; fileRef = 82DD72022B55955700767BF8 /* loading_white.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		827718A22AF4299B00660E08 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		827718A42AF458CF00660E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		82DD72022B55955700767BF8 /* loading_white.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_white.json; sourceTree = "<group>"; };
 		857C074632924CB2C9B1C0EE /* Pods-LukaBluesnapSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LukaBluesnapSDK.debug.xcconfig"; path = "Target Support Files/Pods-LukaBluesnapSDK/Pods-LukaBluesnapSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		97EB19F940492ABD33D43B91 /* Pods-LukaBluesnap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LukaBluesnap.release.xcconfig"; path = "Target Support Files/Pods-LukaBluesnap/Pods-LukaBluesnap.release.xcconfig"; sourceTree = "<group>"; };
 		C0D718F2BF80C52313B15407 /* Pods-LukaBluesnap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LukaBluesnap.debug.xcconfig"; path = "Target Support Files/Pods-LukaBluesnap/Pods-LukaBluesnap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		824595422AF7CA68004CD859 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				82DD72022B55955700767BF8 /* loading_white.json */,
 				824595442AF7CA77004CD859 /* ViewModel */,
 				824595432AF7CA71004CD859 /* View */,
 				8245958E2AF84A19004CD859 /* Assets.xcassets */,
@@ -578,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82DD72032B55957100767BF8 /* loading_white.json in Resources */,
 				824595B72AF8FE34004CD859 /* Opensans-Regular.ttf in Resources */,
 				824595B52AF8FE34004CD859 /* Opensans-Semibold.ttf in Resources */,
 				8245958F2AF84A19004CD859 /* Assets.xcassets in Resources */,

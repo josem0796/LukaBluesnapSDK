@@ -59,7 +59,7 @@ struct AlertDialog<Content: View>: View {
 
       Rectangle()
         .fill(.white)
-        .frame(width: 300, height: 150)
+        .frame(width: 300, height: 200)
         .cornerRadius(15)
         .overlay(
           VStack {

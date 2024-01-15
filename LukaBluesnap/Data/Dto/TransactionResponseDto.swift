@@ -19,6 +19,7 @@ struct TransactionResponseDto: Codable {
   let paymentNetwork: String?
   let traceId: String?
   let amount: Double?
+  let message: String?
 
   enum CodingKeys: String, CodingKey {
     case infoUser = "InfoUsuarioPagador"
@@ -34,6 +35,7 @@ struct TransactionResponseDto: Codable {
     case paymentNetwork = "MedioDePago"
     case traceId = "TrazaId"
     case amount = "Monto"
+    case message = "Mensaje"
   }
 }
 

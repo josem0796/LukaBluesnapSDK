@@ -1,14 +1,17 @@
 PODS:
   - Alamofire (5.8.1)
   - BluesnapSDK (2.0.2)
+  - lottie-ios (4.3.4)
 
 DEPENDENCIES:
   - Alamofire
   - BluesnapSDK (from `https://github.com/bluesnap/bluesnap-ios`, tag `v2.0.2`)
+  - lottie-ios
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - lottie-ios
 
 EXTERNAL SOURCES:
   BluesnapSDK:
@@ -23,7 +26,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   BluesnapSDK: b89b918bd7198367de7a0d55c1939ca9d0066ab1
+  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
 
-PODFILE CHECKSUM: 8aeebf266ba4db80ab060ffcb7536b3953d56261
+PODFILE CHECKSUM: fef29fa32bee7ee27935d8eee693240eb4b2fcba
 
 COCOAPODS: 1.14.2

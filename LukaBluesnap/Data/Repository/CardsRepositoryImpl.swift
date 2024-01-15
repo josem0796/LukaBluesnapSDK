@@ -41,6 +41,10 @@ class CardsRepositoryImpl: CardsRepository {
     )
     .publishDecodable(type: TransactionResponseDto.self)
     .tryMap { result in
+      
+      if result.value?.code == 400 && result.value?.message == "Correo electrónico inválido" {
+        throw AddCardError.invalidEmail
+      }
 
       if result.value?.code == 400 {
         throw AddCardError.cardAlreadyAdded

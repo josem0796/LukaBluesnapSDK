@@ -16,7 +16,7 @@ class MainViewModel: ObservableObject {
   var disposables = Set<AnyCancellable>()
 
   func addCard() {
-    LukaBluesnapSdk.addNewCard(email: "jdoe@yopmail.com")
+    LukaBluesnapSdk.addNewCard(email: "jmoran@yopmail.com")
       .onSuccess { result in
         print(result)
       }.onError { err in

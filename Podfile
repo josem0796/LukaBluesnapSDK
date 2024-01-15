@@ -9,4 +9,5 @@ target 'LukaBluesnap' do
     use_frameworks!
     pod 'BluesnapSDK' , :git => 'https://github.com/bluesnap/bluesnap-ios' , :tag => 'v2.0.2'
     pod 'Alamofire'
+    pod 'lottie-ios'
 end

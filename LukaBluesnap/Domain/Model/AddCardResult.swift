@@ -17,6 +17,7 @@ public enum AddCardError: Error {
   case noCustomerId
   case couldNotAddCard
   case cardAlreadyAdded
+  case invalidEmail
   case somethingWentWrong(msg: String)
 }
 
