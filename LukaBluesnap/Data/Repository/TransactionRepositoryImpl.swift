@@ -11,12 +11,12 @@ import Alamofire
 class TransactionRepositoryImpl: TransactionsRepository {
   var authRepository: AuthRepository = DataContainer.authRepository
 
-  func processPayment(customerId: String, card: LukaCard, amount: Double, email: String) -> AnyPublisher<TransactionResult, TransactionError> {
+  func processPayment(customerId: String, card: LukaCard, amount: Double, email: String, customerTraceId: String) -> AnyPublisher<TransactionResult, TransactionError> {
     let trx = Transaction(
       email: email,
       amount: String(format:"%.2f", amount),
       bsToken: LukaBluesnapSdk.instance.session.bsToken,
-      lukaClientId: LukaBluesnapSdk.instance.session.lukaCustomerId,
+      lukaClientId: customerTraceId.isEmpty ? LukaBluesnapSdk.instance.session.lukaCustomerId : customerTraceId,
       creditCard: TrxCard(
         id: card.cardId,
         statusId:0,

@@ -8,5 +8,5 @@
 import Combine
 
 protocol TransactionsRepository {
-  func processPayment(customerId: String, card: LukaCard, amount: Double, email: String) -> AnyPublisher<TransactionResult, TransactionError>
+  func processPayment(customerId: String, card: LukaCard, amount: Double, email: String, customerTraceId: String) -> AnyPublisher<TransactionResult, TransactionError>
 }

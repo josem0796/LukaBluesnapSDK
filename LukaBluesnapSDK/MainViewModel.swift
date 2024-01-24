@@ -51,7 +51,7 @@ class MainViewModel: ObservableObject {
   }
 
   func makePayment(card: LukaCard) {
-    LukaBluesnapSdk.processPayment(clientId: "e1555a98-881a-48a5-b958-fc1c6f37f258", card: card, amount: 10.0, email: "jdoe@yopmail.com")
+    LukaBluesnapSdk.processPayment(clientId: "e1555a98-881a-48a5-b958-fc1c6f37f258", card: card, amount: 10.0, email: "jdoe@yopmail.com", customTraceId: "")
       .onSuccess { rst in
         print("Transaction successfull \(rst.id)")
       }.onError { err in

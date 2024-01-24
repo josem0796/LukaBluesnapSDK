@@ -37,8 +37,8 @@ public class LukaBluesnapSdk {
   }
 
 
-  public static func processPayment(clientId: String, card: LukaCard, amount: Double, email: String) -> PaymentOperation {
-    return PaymentOperation(customerId: clientId, card: card, amount: amount, email: email)
+  public static func processPayment(clientId: String, card: LukaCard, amount: Double, email: String, customTraceId: String) -> PaymentOperation {
+    return PaymentOperation(customerId: clientId, card: card, amount: amount, email: email, customerTraceId: customTraceId)
   }
 
   public static func deleteCard(clientId: String, cardId: Int) -> DeleteCardOperation {
@@ -204,12 +204,14 @@ public class PaymentOperation: Operation {
   internal let card: LukaCard
   internal let amount: Double
   internal let email: String
+  internal let customerTraceId: String
 
-  init(customerId: String, card: LukaCard, amount: Double, email: String) {
+  init(customerId: String, card: LukaCard, amount: Double, email: String, customerTraceId: String) {
     self.customerId = customerId
     self.card = card
     self.amount = amount
     self.email = email
+    self.customerTraceId = customerTraceId
   }
 
   internal var successCall : ((TransactionResult) -> Void)? = nil
@@ -234,7 +236,7 @@ public class PaymentOperation: Operation {
   public func start() {
     LukaBluesnapSdk.instance.operation = self
     self.loadingCall?()
-    UseCaseFactory.processPaymentUseCase.invoke(customerId: customerId, card: card, amount: amount, email: email)
+    UseCaseFactory.processPaymentUseCase.invoke(customerId: customerId, card: card, amount: amount, email: email, customerTraceId: customerTraceId)
       .receive(on: DispatchQueue.main)
       .sink(receiveCompletion: { completion in
         switch completion {
