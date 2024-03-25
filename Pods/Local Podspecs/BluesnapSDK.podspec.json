@@ -1,6 +1,6 @@
 {
   "name": "BluesnapSDK",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "summary": "An iOS SDK for Bluesnap",
   "description": "Integrate payment methods into your iOS native apps quickly and easily.\nBluesnap iOS SDK supports credit card and Apple Pay, currency conversions and more.",
   "homepage": "http://www.bluesnap.com",
@@ -17,7 +17,7 @@
   "swift_versions": "5.0",
   "source": {
     "git": "https://github.com/bluesnap/bluesnap-ios.git",
-    "tag": "${spec.version}"
+    "tag": "v2.0.2"
   },
   "pod_target_xcconfig": {
     "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"

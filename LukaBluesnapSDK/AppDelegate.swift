@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   override init() {
     LukaBluesnapSdk
       .setUpConfig(
-//        config: Config(env: .live, creds: Config.SdkCredentials(username: "payco", password: "rain-FACT-hand-NIECE")),
         config: Config(env: .sandbox, creds: Config.SdkCredentials(username: "payco", password: "12345678")),
         callbacks: ConfigCallbacksImpl()
       )

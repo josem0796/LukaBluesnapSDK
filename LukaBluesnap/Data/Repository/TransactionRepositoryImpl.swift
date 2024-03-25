@@ -70,4 +70,35 @@ class TransactionRepositoryImpl: TransactionsRepository {
     }
     .eraseToAnyPublisher()
   }
+  
+  func checkTransaction(traceId: String) -> AnyPublisher<TransactionResponseDto, TransactionError> {
+    return AF.request(
+      URL(string: "\(ApiConfig.baseUrl)/transaccion")!,
+      method: .get,
+      parameters: ["trazaId": traceId],
+      headers: ["Authorization": LukaBluesnapSdk.instance.config.creds.basic()]
+    )
+    .publishDecodable(type: [TransactionResponseDto].self)
+    .tryMap { result in
+      
+      guard let value = result.value?.first else {
+        throw TransactionError.badRequest
+      }
+      
+      if value.message == "Correo electrónico inválido" {
+        throw TransactionError.badRequest
+      }
+
+
+      return value
+    }.mapError { error -> TransactionError in
+      guard let err = error as? TransactionError else {
+        return TransactionError.somethingWentWrong(msg: "Something went wrong. Try again")
+      }
+      return err
+    }
+    .eraseToAnyPublisher()
+  }
+  
+  
 }

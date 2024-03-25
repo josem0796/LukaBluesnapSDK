@@ -65,6 +65,7 @@
 		824C2FF72AF18587003CA4AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824C2FF62AF18587003CA4AE /* ContentView.swift */; };
 		824C2FF92AF18588003CA4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FF82AF18588003CA4AE /* Assets.xcassets */; };
 		824C2FFC2AF18588003CA4AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */; };
+		82553C022BB1D242009A6C61 /* ChecktTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82553C012BB1D242009A6C61 /* ChecktTransactionUseCase.swift */; };
 		827718A32AF4299B00660E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827718A22AF4299B00660E08 /* Main.storyboard */; };
 		827718A52AF458CF00660E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827718A42AF458CF00660E08 /* AppDelegate.swift */; };
 		82DD72032B55957100767BF8 /* loading_white.json in Resources */ = {isa = PBXBuildFile; fileRef = 82DD72022B55955700767BF8 /* loading_white.json */; };
@@ -154,6 +155,7 @@
 		824C2FF62AF18587003CA4AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		824C2FF82AF18588003CA4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		82553C012BB1D242009A6C61 /* ChecktTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecktTransactionUseCase.swift; sourceTree = "<group>"; };
 		827718A22AF4299B00660E08 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		827718A42AF458CF00660E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82DD72022B55955700767BF8 /* loading_white.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_white.json; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				8245956C2AF7E34F004CD859 /* UseCaseFactory.swift */,
 				824595702AF7F01B004CD859 /* GetBsTokenUseCase.swift */,
 				824595722AF7F027004CD859 /* LukaAuthUseCase.swift */,
+				82553C012BB1D242009A6C61 /* ChecktTransactionUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				8245955C2AF7CEF6004CD859 /* CardsRepository.swift in Sources */,
 				8245954C2AF7CD61004CD859 /* ProcessPaymentUseCase.swift in Sources */,
 				824543EE2AFB70E20037793A /* TransactionResult.swift in Sources */,
+				82553C022BB1D242009A6C61 /* ChecktTransactionUseCase.swift in Sources */,
 				824595802AF83F92004CD859 /* ExpiryDateInput.swift in Sources */,
 				8245955E2AF7D10C004CD859 /* CardsRepositoryImpl.swift in Sources */,
 				824595942AF84D36004CD859 /* ImageProvider.swift in Sources */,

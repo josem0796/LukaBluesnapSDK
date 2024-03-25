@@ -16,4 +16,5 @@ public struct UseCaseFactory {
   static var listCardsUseCase: GetCardsUseCase { GetCardsUseCase() }
 
   static var processPaymentUseCase: ProcessPaymentUseCase { ProcessPaymentUseCase() }
+  static var checkTransactionUseCase: ChecktTransactionUseCase { ChecktTransactionUseCase() }
 }

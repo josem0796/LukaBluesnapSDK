@@ -16,15 +16,8 @@ struct ContentView: View {
     var body: some View {
       VStack {
 
-        ForEach(0..<self.viewModel.cards.count, id: \.self) { index in
-          Text("\(viewModel.cards[index].cardLast4)")
-            .onTapGesture {
-              viewModel.makePayment(card: viewModel.cards[index])
-            }
-        }
-
           Button(action: {
-            viewModel.addCard()
+            viewModel.checkTransaction(traceId: "65fc7f3fb2202728ecd59d18")
           }, label: {
             Text("Press me")
           })

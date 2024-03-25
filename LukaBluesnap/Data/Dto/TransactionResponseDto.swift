@@ -5,21 +5,23 @@
 //  Created by Jose Moran on 6/11/23.
 //
 
-struct TransactionResponseDto: Codable {
-  let infoUser: InfoUser?
-  let resultInfo: ResultInfo?
-  let cardData: CardData?
-  let cardHolder: CardHolderResponseDto?
-  let msg: String?
-  let code: Int?
-  var continues: Bool?
-  let success : Bool?
-  let transactionId: Int?
-  let transactionMerchantId: Int?
-  let paymentNetwork: String?
-  let traceId: String?
-  let amount: Double?
-  let message: String?
+public struct TransactionResponseDto: Codable {
+  public let infoUser: InfoUser?
+  public let resultInfo: ResultInfo?
+  public let cardData: CardData?
+  public let cardHolder: CardHolderResponseDto?
+  public let msg: String?
+  public let code: Int?
+  public var continues: Bool?
+  public let success : Bool?
+  public let transactionId: Int?
+  public let transactionMerchantId: Int?
+  public let paymentNetwork: String?
+  public let traceId: String?
+  public let amount: Double?
+  public let originalAmount: Double?
+  public let usdAmount: Double?
+  public let message: String?
 
   enum CodingKeys: String, CodingKey {
     case infoUser = "InfoUsuarioPagador"
@@ -35,32 +37,34 @@ struct TransactionResponseDto: Codable {
     case paymentNetwork = "MedioDePago"
     case traceId = "TrazaId"
     case amount = "Monto"
+    case originalAmount = "MontoOriginal"
+    case usdAmount = "MontoUsd"
     case message = "Mensaje"
   }
 }
 
-struct InfoUser: Codable {
-  let email: String
+public struct InfoUser: Codable {
+  public let email: String
   enum CodingKeys: String, CodingKey {
     case email = "Email"
   }
 }
 
-struct ResultInfo: Codable {
-  let status: String
+public struct ResultInfo: Codable {
+  public let status: String
 
   enum CodingKeys: String, CodingKey {
     case status = "EstatusProcesamiento"
   }
 }
 
-struct CardData: Codable {
-  let id: Int
-  let last4: String
-  let ccSubType: String
-  let ccType: String?
-  let expiryDate: String?
-  let country: String?
+public struct CardData: Codable {
+  public let id: Int
+  public let last4: String
+  public let ccSubType: String
+  public let ccType: String?
+  public let expiryDate: String?
+  public let country: String?
 
   enum CodingKeys: String, CodingKey {
     case id = "Id"
@@ -78,8 +82,8 @@ struct CardData: Codable {
 //  }
 //}
 
-struct CardHolderResponseDto: Codable {
-  let lukapayId: String?
+public struct CardHolderResponseDto: Codable {
+  public let lukapayId: String?
 
   enum CodingKeys: String, CodingKey {
     case lukapayId = "LukapayId"

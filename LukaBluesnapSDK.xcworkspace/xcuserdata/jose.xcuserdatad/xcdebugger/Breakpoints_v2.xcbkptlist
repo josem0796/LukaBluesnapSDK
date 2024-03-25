@@ -505,6 +505,21 @@
                   endingLineNumber = "49"
                   offsetFromSymbolStart = "3140">
                </Location>
+               <Location
+                  uuid = "D3EFE3C7-E3AF-4B4E-B23C-888DC1662393 - 966186eb8f98b5a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;LukaBluesnap.TransactionResponseDto, Alamofire.AFError&gt;) throws -&gt; LukaBluesnap.AddCardResult in LukaBluesnap.CardsRepositoryImpl.storeCard(email: Swift.String, customerId: Swift.Optional&lt;Swift.String&gt;, card: LukaBluesnap.BsCard) -&gt; Combine.AnyPublisher&lt;LukaBluesnap.AddCardResult, LukaBluesnap.AddCardError&gt;"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/Data/Repository/CardsRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "3124">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -537,6 +552,118 @@
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "addCard()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4020B879-E88C-4AD6-99B2-1BA6D060BCAF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "checkTransaction(traceId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4020B879-E88C-4AD6-99B2-1BA6D060BCAF - 8d97556db263c938"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;LukaBluesnap.TransactionResponseDto&gt;, Alamofire.AFError&gt;) throws -&gt; LukaBluesnap.TransactionResponseDto in LukaBluesnap.TransactionRepositoryImpl.checkTransaction(traceId: Swift.String) -&gt; Combine.AnyPublisher&lt;LukaBluesnap.TransactionResponseDto, LukaBluesnap.TransactionError&gt;"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "2432">
+               </Location>
+               <Location
+                  uuid = "4020B879-E88C-4AD6-99B2-1BA6D060BCAF - 8d97556db263c9db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;LukaBluesnap.TransactionResponseDto&gt;, Alamofire.AFError&gt;) throws -&gt; LukaBluesnap.TransactionResponseDto in LukaBluesnap.TransactionRepositoryImpl.checkTransaction(traceId: Swift.String) -&gt; Combine.AnyPublisher&lt;LukaBluesnap.TransactionResponseDto, LukaBluesnap.TransactionError&gt;"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "2432">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4113100-41AF-46E4-8AEF-FE845D72132A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "checkTransaction(traceId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E4113100-41AF-46E4-8AEF-FE845D72132A - 8d97556db263c844"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;LukaBluesnap.TransactionResponseDto&gt;, Alamofire.AFError&gt;) throws -&gt; LukaBluesnap.TransactionResponseDto in LukaBluesnap.TransactionRepositoryImpl.checkTransaction(traceId: Swift.String) -&gt; Combine.AnyPublisher&lt;LukaBluesnap.TransactionResponseDto, LukaBluesnap.TransactionError&gt;"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "E4113100-41AF-46E4-8AEF-FE845D72132A - 8d97556db263c867"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;LukaBluesnap.TransactionResponseDto&gt;, Alamofire.AFError&gt;) throws -&gt; LukaBluesnap.TransactionResponseDto in LukaBluesnap.TransactionRepositoryImpl.checkTransaction(traceId: Swift.String) -&gt; Combine.AnyPublisher&lt;LukaBluesnap.TransactionResponseDto, LukaBluesnap.TransactionError&gt;"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66911BA4-4235-4855-9FC1-6CAE584B961F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/Data/Repository/TransactionRepositoryImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "checkTransaction(traceId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

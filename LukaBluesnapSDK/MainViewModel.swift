@@ -16,7 +16,7 @@ class MainViewModel: ObservableObject {
   var disposables = Set<AnyCancellable>()
 
   func addCard() {
-    LukaBluesnapSdk.addNewCard(email: "jmoran@yopmail.com")
+    LukaBluesnapSdk.addNewCard(email: "jmoran@lukapay.io")
       .onSuccess { result in
         print(result)
       }.onError { err in
@@ -51,7 +51,7 @@ class MainViewModel: ObservableObject {
   }
 
   func makePayment(card: LukaCard) {
-    LukaBluesnapSdk.processPayment(clientId: "e1555a98-881a-48a5-b958-fc1c6f37f258", card: card, amount: 10.0, email: "jdoe@yopmail.com", customTraceId: "")
+    LukaBluesnapSdk.processPayment(clientId: "e1555a98-881a-48a5-b958-fc1c6f37f258", card: card, amount: 1.0, email: "jmoran@lukapay.io", customTraceId: "")
       .onSuccess { rst in
         print("Transaction successfull \(rst.id)")
       }.onError { err in
@@ -59,4 +59,13 @@ class MainViewModel: ObservableObject {
       }.start()
   }
 
+  func checkTransaction(traceId: String) {
+    LukaBluesnapSdk.checkTransaction(traceId: traceId)
+      .onSuccess { rst in
+        print("Transaction successfull \(rst)")
+      }.onError { err in
+        print(err)
+      }.start()
+  }
+  
 }

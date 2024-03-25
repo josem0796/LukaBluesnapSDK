@@ -40,6 +40,10 @@ public class LukaBluesnapSdk {
   public static func processPayment(clientId: String, card: LukaCard, amount: Double, email: String, customTraceId: String) -> PaymentOperation {
     return PaymentOperation(customerId: clientId, card: card, amount: amount, email: email, customerTraceId: customTraceId)
   }
+  
+  public static func checkTransaction(traceId: String ) -> CheckTransactionOperation {
+    return CheckTransactionOperation(traceId: traceId)
+  }
 
   public static func deleteCard(clientId: String, cardId: Int) -> DeleteCardOperation {
     return DeleteCardOperation(customerId: clientId, cardId: cardId)
@@ -256,6 +260,56 @@ public class PaymentOperation: Operation {
 
 }
 
+public class CheckTransactionOperation: Operation {
+  public typealias G = TransactionResponseDto
+
+  internal let traceId: String
+  init(traceId: String ) {
+    self.traceId = traceId
+  }
+
+  internal var successCall : ((TransactionResponseDto) -> Void)? = nil
+  internal var errorCall : ((Error) -> Void)? = nil
+  internal var loadingCall : (() -> Void)? = nil
+
+  public func onSuccess(_ successCall: @escaping (TransactionResponseDto) -> Void) -> any Operation {
+    self.successCall = successCall
+    return self
+  }
+
+  public func onError(_ errorCall : @escaping (Error) -> Void) -> any Operation {
+    self.errorCall = errorCall
+    return self
+  }
+
+  public func onLoading(_ loadingCall: @escaping (() -> Void)) -> any Operation {
+    self.loadingCall = loadingCall
+    return self
+  }
+
+  public func start() {
+    LukaBluesnapSdk.instance.operation = self
+    self.loadingCall?()
+    UseCaseFactory.checkTransactionUseCase.invoke(traceId: traceId)
+      .receive(on: DispatchQueue.main)
+      .sink(receiveCompletion: { completion in
+        switch completion {
+        case .failure(let error):
+          debugPrint("failure to check transaction")
+          self.errorCall?(error)
+
+        case .finished: debugPrint("Succefull retrieving transaction from Luka")
+        }
+
+      }, receiveValue: { result in
+        self.successCall?(result)
+
+      }).store(in: &LukaBluesnapSdk.instance.disposables)
+  }
+
+
+}
+
 
 public protocol Operation {
   associatedtype G
@@ -291,6 +345,12 @@ public struct Config {
     }
 
     static let empty = SdkCredentials(username: "", password: "")
+    
+    func basic() -> String {
+        let joined = "\(username):\(password)"
+        let data = Data(joined.utf8)
+        return "Basic \(data.base64EncodedString())"
+    }
   }
 
   public typealias Callbacks = ConfigCallbacks
