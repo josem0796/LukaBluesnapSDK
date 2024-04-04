@@ -399,22 +399,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF0A0CE0-2134-4071-A441-8DF48B25583E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LukaBluesnap/Presentation/ViewModel/LukaBluesnapViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "addCard()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6BE9A896-63B4-4A6B-AC90-D81AD54F2BD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -549,8 +533,8 @@
             filePath = "LukaBluesnap/Presentation/ViewModel/LukaBluesnapViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "addCard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -664,6 +648,70 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "checkTransaction(traceId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC39ACAC-080E-4F69-89E6-27978B006A2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/LukaBluesnap.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setUpConfig(config:callbacks:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC39ACAC-080E-4F69-89E6-27978B006A2F - 59039336b18f8060"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in static LukaBluesnap.LukaBluesnapSdk.setUpConfig(config: LukaBluesnap.Config, callbacks: LukaBluesnap.ConfigCallbacks) -&gt; ()"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/LukaBluesnap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "CC39ACAC-080E-4F69-89E6-27978B006A2F - 59039336b18f8060"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in static LukaBluesnap.LukaBluesnapSdk.setUpConfig(config: LukaBluesnap.Config, callbacks: LukaBluesnap.ConfigCallbacks) -&gt; ()"
+                  moduleName = "LukaBluesnap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/StandDrive/Work/Luka/iOS/LukaBluesnapSDK/LukaBluesnap/LukaBluesnap.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D65BD34A-D1F8-481C-9431-E88652048152"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LukaBluesnap/Data/Repository/AuthRepositoryImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "auth(username:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

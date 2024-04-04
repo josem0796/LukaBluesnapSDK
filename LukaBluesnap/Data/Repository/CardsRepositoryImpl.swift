@@ -32,7 +32,7 @@ class CardsRepositoryImpl: CardsRepository {
       return Fail(error: AddCardError.noAuth).eraseToAnyPublisher()
     }
 
-    return AF.request(
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/transaccion")!,
       method: .post,
       parameters: trx,
@@ -83,7 +83,7 @@ class CardsRepositoryImpl: CardsRepository {
       return Just([]).eraseToAnyPublisher()
     }
 
-    return AF.request(
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/tarjetacredito/servicio/\(customerId)")!,
       method: .get,
       headers: ["Authorization": "Bearer \(token)"]
@@ -109,7 +109,7 @@ class CardsRepositoryImpl: CardsRepository {
       return Just(false).eraseToAnyPublisher()
     }
 
-    return AF.request(
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/tarjetacredito/\(cardId)/user/\(customerId)")!,
       method: .delete,
       headers: ["Authorization": "Bearer \(token)"]

@@ -17,7 +17,9 @@ public class LukaBluesnapSdk {
 
   var config: Config = Config.default
 
-  var session: Session = Session.default
+  var session: LukaSession = LukaSession.default
+  
+  let apiSession = provideSessionManager()
 
   internal var disposables = Set<AnyCancellable>()
 
@@ -362,13 +364,13 @@ public protocol ConfigCallbacks {
   func onError()
 }
 
-public class Session {
+public class LukaSession {
   var lukaCustomerId: String = .empty
   var bsToken: String = .empty
   var lukaToken: String = .empty
   var clienId: String = .empty
 
-  public static let `default` = Session()
+  public static let `default` = LukaSession()
 }
 
 extension String {

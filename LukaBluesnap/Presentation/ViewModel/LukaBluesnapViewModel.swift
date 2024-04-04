@@ -97,30 +97,41 @@ class LukaBluesnapViewModel: ObservableObject {
           return
         }
         print(result)
-        self.bsCard.country = result["issuingCountry"] ?? "US"
-
-        BlueSnapSDK.authenticationWith3DS(currency: "USD", amount: "1.0", { result, bsErrors in
-          switch result {
-          case "AUTHENTICATION_SUCCEEDED":
-            self.addCardDetails()
-          case "AUTHENTICATION_BYPASSED":
-            self.addCardDetails()
-          case "AUTHENTICATION_UNAVAILABLE":
-            self.btnState = .enabled
-            self.errorMsgKey = .threeDSecureUnavailable
-          case "AUTHENTICATION_FAILED":
-            self.btnState = .enabled
-            self.errorMsgKey = .threeDSecureFailed
-          case "THREE_DS_ERROR":
-            self.btnState = .enabled
-            self.errorMsgKey = .threeDSecureInternal
-          default:
-            self.btnState = .enabled
-            break
-          }
-        })
+        let iso = result["issuingCountry"] ?? "US"
+        self.bsCard.country = iso
+        
+        if (self.verifyCardCountryAccepts3DS(isoCountry: iso)) {
+          BlueSnapSDK.authenticationWith3DS(currency: "USD", amount: "1.0", { result, bsErrors in
+            switch result {
+            case "AUTHENTICATION_SUCCEEDED":
+              self.addCardDetails()
+            case "AUTHENTICATION_BYPASSED":
+              self.addCardDetails()
+            case "AUTHENTICATION_UNAVAILABLE":
+              self.btnState = .enabled
+              self.errorMsgKey = .threeDSecureUnavailable
+            case "AUTHENTICATION_FAILED":
+              self.btnState = .enabled
+              self.errorMsgKey = .threeDSecureFailed
+            case "THREE_DS_ERROR":
+              self.btnState = .enabled
+              self.errorMsgKey = .threeDSecureInternal
+            default:
+              self.btnState = .enabled
+              break
+            }
+          })
+          return
+        }
+        
+        self.addCardDetails()
       }
     )
+  }
+  
+  
+  func verifyCardCountryAccepts3DS(isoCountry: String) -> Bool {
+    return ThreeDSConfig.europe.contains(where: { $0.isoCode == isoCountry })
   }
 
   func addCardDetails() {

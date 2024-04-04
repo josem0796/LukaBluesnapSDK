@@ -66,6 +66,8 @@
 		824C2FF92AF18588003CA4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FF82AF18588003CA4AE /* Assets.xcassets */; };
 		824C2FFC2AF18588003CA4AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */; };
 		82553C022BB1D242009A6C61 /* ChecktTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82553C012BB1D242009A6C61 /* ChecktTransactionUseCase.swift */; };
+		826909442BBE4BB50033AFA1 /* payco2024.cer in Resources */ = {isa = PBXBuildFile; fileRef = 826909432BBE4B710033AFA1 /* payco2024.cer */; };
+		826909472BBE50680033AFA1 /* 3DSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826909462BBE50680033AFA1 /* 3DSConfig.swift */; };
 		827718A32AF4299B00660E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827718A22AF4299B00660E08 /* Main.storyboard */; };
 		827718A52AF458CF00660E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827718A42AF458CF00660E08 /* AppDelegate.swift */; };
 		82DD72032B55957100767BF8 /* loading_white.json in Resources */ = {isa = PBXBuildFile; fileRef = 82DD72022B55955700767BF8 /* loading_white.json */; };
@@ -156,6 +158,8 @@
 		824C2FF82AF18588003CA4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		824C2FFB2AF18588003CA4AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82553C012BB1D242009A6C61 /* ChecktTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecktTransactionUseCase.swift; sourceTree = "<group>"; };
+		826909432BBE4B710033AFA1 /* payco2024.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = payco2024.cer; path = ../../../../../payco2024.cer; sourceTree = "<group>"; };
+		826909462BBE50680033AFA1 /* 3DSConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DSConfig.swift; sourceTree = "<group>"; };
 		827718A22AF4299B00660E08 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		827718A42AF458CF00660E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82DD72022B55955700767BF8 /* loading_white.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = loading_white.json; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				824595442AF7CA77004CD859 /* ViewModel */,
 				824595432AF7CA71004CD859 /* View */,
 				8245958E2AF84A19004CD859 /* Assets.xcassets */,
+				826909432BBE4B710033AFA1 /* payco2024.cer */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 		824595482AF7CBF3004CD859 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				826909452BBE50560033AFA1 /* 3DS */,
 				824595532AF7CE49004CD859 /* Repository */,
 				8245954A2AF7CBFC004CD859 /* UseCases */,
 				824595492AF7CBF8004CD859 /* Model */,
@@ -473,6 +479,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		826909452BBE50560033AFA1 /* 3DS */ = {
+			isa = PBXGroup;
+			children = (
+				826909462BBE50680033AFA1 /* 3DSConfig.swift */,
+			);
+			path = 3DS;
+			sourceTree = "<group>";
+		};
 		9586CFF6BA40C6ED00993D0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826909442BBE4BB50033AFA1 /* payco2024.cer in Resources */,
 				82DD72032B55957100767BF8 /* loading_white.json in Resources */,
 				824595B72AF8FE34004CD859 /* Opensans-Regular.ttf in Resources */,
 				824595B52AF8FE34004CD859 /* Opensans-Semibold.ttf in Resources */,
@@ -696,6 +711,7 @@
 				8245957C2AF7F3CE004CD859 /* EmptyResponse.swift in Sources */,
 				8245955C2AF7CEF6004CD859 /* CardsRepository.swift in Sources */,
 				8245954C2AF7CD61004CD859 /* ProcessPaymentUseCase.swift in Sources */,
+				826909472BBE50680033AFA1 /* 3DSConfig.swift in Sources */,
 				824543EE2AFB70E20037793A /* TransactionResult.swift in Sources */,
 				82553C022BB1D242009A6C61 /* ChecktTransactionUseCase.swift in Sources */,
 				824595802AF83F92004CD859 /* ExpiryDateInput.swift in Sources */,

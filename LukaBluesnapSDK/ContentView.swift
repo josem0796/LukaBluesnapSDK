@@ -17,7 +17,7 @@ struct ContentView: View {
       VStack {
 
           Button(action: {
-            viewModel.checkTransaction(traceId: "65fc7f3fb2202728ecd59d18")
+            viewModel.addCard()
           }, label: {
             Text("Press me")
           })

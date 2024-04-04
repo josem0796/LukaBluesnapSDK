@@ -9,8 +9,11 @@ import Combine
 import Alamofire
 
 class AuthRepositoryImpl: AuthRepository {
+ 
+  
   func auth(username: String, password: String) -> AnyPublisher<String, Never> {
-    return AF.request(
+    
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/servicio/login")!,
       method: .post,
       parameters: ["Username":username, "Password": password],
@@ -33,7 +36,8 @@ class AuthRepositoryImpl: AuthRepository {
 
   func getBsToken() -> AnyPublisher<String, Never> {
     let authToken = LukaBluesnapSdk.instance.session.lukaToken
-    return AF.request(
+    
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/transaccion/token")!,
         method: .get,
         headers: ["Authorization": "Bearer \(authToken)"]

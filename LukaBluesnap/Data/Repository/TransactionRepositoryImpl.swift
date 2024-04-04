@@ -36,7 +36,7 @@ class TransactionRepositoryImpl: TransactionsRepository {
       return Fail(error: TransactionError.noAuth).eraseToAnyPublisher()
     }
 
-    return AF.request(
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/transaccion")!,
       method: .post,
       parameters: trx,
@@ -72,7 +72,7 @@ class TransactionRepositoryImpl: TransactionsRepository {
   }
   
   func checkTransaction(traceId: String) -> AnyPublisher<TransactionResponseDto, TransactionError> {
-    return AF.request(
+    return LukaBluesnapSdk.instance.apiSession.request(
       URL(string: "\(ApiConfig.baseUrl)/transaccion")!,
       method: .get,
       parameters: ["trazaId": traceId],
@@ -100,5 +100,6 @@ class TransactionRepositoryImpl: TransactionsRepository {
     .eraseToAnyPublisher()
   }
   
-  
 }
+
+
